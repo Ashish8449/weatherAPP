@@ -1,0 +1,278 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.5px;
+}
+:root {
+  --primary-color: #1e213a;
+
+  --secondary-color: hsl(52, 45%, 55%);
+  --third-color: #f98169;
+  --white-color: #fff;
+  --text-color: #555;
+  --text-gray: #999;
+  --black-color: #000;
+  --primary-font: "Josefin Sans", sans-serif;
+  --secondry-font: "Ubuntu", sans-serif;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+}
+
+/*================================================================================
+                     custom css                                                           
+================================================================================*/
+.contaniner {
+  min-width: 100vw;
+
+  /* border: 2px solid red; */
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col-4 {
+  padding: 30px 22px;
+  color: #fff;
+  width: 33%;
+  min-height: 100vh;
+  /* border: 2px solid green; */
+  background: var(--primary-color);
+  text-align: center;
+  position: relative;
+}
+.col-4::after {
+  content: "";
+
+  position: absolute;
+
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  background: url(/img/Cloud-background.png) no-repeat;
+  /* background-position: top center; */
+  background-position: -80px 100px;
+
+  left: 0;
+  top: 0;
+  z-index: 1;
+  opacity: 0.3;
+  text-align: center;
+}
+.topDiv {
+  align-items: center;
+  text-align: left;
+  justify-content: space-between;
+}
+.topDiv input {
+  background: #6e707a;
+  padding: 8px;
+  border-radius: 8px;
+}
+.currentLocation {
+  margin-top: 20px;
+  font-size: 20px;
+}
+.topDiv input::placeholder {
+  color: var(--white-color);
+  font-size: 15px;
+}
+.topDiv i {
+  color: #6e707a;
+  position: relative;
+  left: 10%;
+}
+
+.col-8 {
+  color: #fff;
+  width: calc(67%);
+  position: relative;
+  /* border: 2px solid green; */
+  background: #100e1d;
+  padding: 10px 20px;
+}
+p {
+  font-size: 20px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.tem span {
+  font-size: 50px;
+}
+.weather {
+  margin-top: 40px;
+  font-size: 30px;
+  color: white;
+}
+
+.tem {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 144px;
+  line-height: 169px;
+  text-align: center;
+  margin-top: 150px;
+
+  color: #e7e7eb;
+}
+.weather {
+  margin: auto;
+}
+.todayDate {
+  margin-top: 40px;
+}
+.weatherIconLeft {
+  position: relative;
+  top: 30px;
+
+  text-align: center;
+  width: 234px;
+  height: 220px;
+  margin: 0 auto;
+}
+
+/*================================================================================
+                             col_8                                                   
+================================================================================*/
+
+.temConveter {
+  position: absolute;
+  margin-top: 10px;
+
+  right: 50px;
+}
+.temConveter button {
+  height: 40px;
+  width: 40px;
+
+  font-weight: 900;
+  border-radius: 30px;
+
+  border: none;
+}
+#celcius {
+  margin-left: 100px;
+  background: white;
+}
+#fahrenheit {
+  background: #585676;
+  margin-right: 10px;
+}
+
+.col-2 {
+  position: relative;
+  padding: 15px;
+  width: calc(20% - 20px);
+  min-height: 186px;
+  margin: 10px;
+  flex-wrap: wrap;
+  text-align: center;
+  background: #1e213a;
+  border-radius: 8px;
+}
+.marginTop {
+  margin-top: 80px;
+}
+.fiveDays {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.weatherIcon {
+  position: absolute;
+  width: 56.44px;
+  height: 62px;
+  left: calc(50% - 23px);
+  top: 25%;
+
+  /* background: url(ModSleetSwrsDay.png); */
+}
+
+.maxTemp,
+.minTemp {
+  text-align: center;
+  margin: 10px 5px;
+  font-size: 25px;
+  font-weight: bold;
+  position: absolute;
+}
+.maxTemp {
+  bottom: 12%;
+  left: 15px;
+}
+.minTemp {
+  bottom: 12%;
+  right: 10px;
+}
+.textCenter {
+  text-align: center;
+}
+.m-auto {
+  margin: auto;
+}
+.col-2 img {
+  margin: 20px auto;
+}
+.col-6 {
+  width: calc(50% - 40px);
+  background: var(--primary-color);
+  position: relative;
+  border-radius: 8px;
+  margin: 10px;
+
+  text-align: center;
+  padding: 20px 20px;
+}
+.windStaus,
+.Humidity,
+.airPressure,
+.visibility {
+  margin: 30px auto;
+  font-size: 40px;
+  font-weight: bold;
+}
+.marginY {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.f-Bold {
+  font-weight: 700;
+}
+.fs {
+  font-size: 40px;
+}
+progress {
+  accent-color: #ffec65;
+  height: 25px;
+  width: 80%;
+}
+
+.marginTop1 {
+  margin-top: 20px;
+}
+.day {
+  position: absolute;
+  top: 10%;
+  left: 40%;
+
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: capitalize;
+
+  text-align: center;
+}
