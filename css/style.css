@@ -54,7 +54,7 @@ body {
   color: #fff;
   height: 100%;
   width: 100%;
-  background: url(./img/Cloud-background.png) no-repeat;
+  background: url(../img/Cloud-background.png) no-repeat;
   /* background-position: top center; */
   background-position: -80px 100px;
 
