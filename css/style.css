@@ -13,8 +13,8 @@
   --text-color: #555;
   --text-gray: #999;
   --black-color: #000;
-  --primary-font: "Josefin Sans", sans-serif;
-  --secondry-font: "Ubuntu", sans-serif;
+  /* --primary-font: "Josefin Sans", sans-serif;
+  --secondry-font: "Ubuntu", sans-serif; */
 }
 html {
   scroll-behavior: smooth;
@@ -37,7 +37,7 @@ body {
 }
 
 .col-4 {
-  padding: 30px 22px;
+  padding: 15px 22px;
   color: #fff;
   width: 33%;
   min-height: 100vh;
@@ -46,7 +46,7 @@ body {
   text-align: center;
   position: relative;
 }
-.col-4::after {
+.leftSide::after {
   content: "";
 
   position: absolute;
@@ -55,8 +55,7 @@ body {
   height: 100%;
   width: 100%;
   background: url(../img/Cloud-background.png) no-repeat;
-  /* background-position: top center; */
-  background-position: -80px 100px;
+  background-position: top center;
 
   left: 0;
   top: 0;
@@ -69,10 +68,16 @@ body {
   text-align: left;
   justify-content: space-between;
 }
-.topDiv input {
+.topDiv button {
   background: #6e707a;
-  padding: 8px;
+  z-index: 10;
+  padding: 10px;
+  color: #fff;
+  width: 200px;
   border-radius: 8px;
+  letter-spacing: 0.5px;
+  text-align: left;
+  font-size: 18px;
 }
 .currentLocation {
   margin-top: 20px;
@@ -118,10 +123,9 @@ img {
   font-family: Raleway;
   font-style: normal;
   font-weight: 500;
-  font-size: 144px;
-  line-height: 169px;
+  font-size: 120px;
+
   text-align: center;
-  margin-top: 150px;
 
   color: #e7e7eb;
 }
@@ -129,15 +133,15 @@ img {
   margin: auto;
 }
 .todayDate {
-  margin-top: 40px;
+  margin-top: 15px;
 }
 .weatherIconLeft {
   position: relative;
-  top: 30px;
+  top: 10px;
 
   text-align: center;
   width: 234px;
-  height: 220px;
+
   margin: 0 auto;
 }
 
@@ -147,7 +151,6 @@ img {
 
 .temConveter {
   position: absolute;
-  margin-top: 10px;
 
   right: 50px;
 }
@@ -171,17 +174,15 @@ img {
 
 .col-2 {
   position: relative;
-  padding: 15px;
-  width: calc(20% - 20px);
-  min-height: 186px;
-  margin: 10px;
+  width: calc(20% - 40px);
+  min-height: 150px;
   flex-wrap: wrap;
   text-align: center;
   background: #1e213a;
   border-radius: 8px;
 }
 .marginTop {
-  margin-top: 80px;
+  margin-top: 52px;
 }
 .fiveDays {
   display: flex;
@@ -209,12 +210,12 @@ img {
   position: absolute;
 }
 .maxTemp {
-  bottom: 12%;
-  left: 15px;
+  bottom: 0px;
+  left: 7%;
 }
 .minTemp {
-  bottom: 12%;
-  right: 10px;
+  bottom: 0px;
+  right: 0;
 }
 .textCenter {
   text-align: center;
@@ -222,9 +223,7 @@ img {
 .m-auto {
   margin: auto;
 }
-.col-2 img {
-  margin: 20px auto;
-}
+
 .col-6 {
   width: calc(50% - 40px);
   background: var(--primary-color);
@@ -233,19 +232,19 @@ img {
   margin: 10px;
 
   text-align: center;
-  padding: 20px 20px;
+  padding: 12px 23px;
 }
 .windStaus,
 .Humidity,
 .airPressure,
 .visibility {
-  margin: 30px auto;
+  margin: 10px auto;
   font-size: 40px;
   font-weight: bold;
 }
 .marginY {
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 .f-Bold {
   font-weight: 700;
@@ -275,4 +274,53 @@ progress {
   text-transform: capitalize;
 
   text-align: center;
+}
+.fa-times {
+  color: #fff;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+.marginTop input,
+.marginTop button {
+  height: 40px;
+  width: 60%;
+  margin-top: 0px;
+}
+.marginTop input {
+  border: 1px solid #e7e7eb;
+}
+.col-4 .marginTop {
+  margin-top: 35px;
+}
+
+.marginTop button {
+  width: 25%;
+  margin-left: 15px;
+  background: #3c47e9;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+  margin-top: 20px;
+}
+.hidden {
+  display: none;
+  transition: all 1s;
+}
+.searchDiv {
+  background: #1e213a;
+}
+li {
+  border: 1px solid #616475;
+  text-align: left;
+  padding: 8px 10px;
+  font-size: 25px;
+  width: 91%;
+  color: #e7e7eb;
+
+  margin-left: 15px;
 }

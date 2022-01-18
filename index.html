@@ -1,23 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1,
+  maximum-scale=5"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1,
-  maximum-scale=5" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/responsive.css" />
-</head>
-
-<body>
-  <div class="contaniner">
-    <div class="row changeRow">
-      <div class="col-4">
-        <div class="topDiv row">
-          <div>
-            <input type="text" name="" id="" placeholder="Search for Places" />
-          </div>
+  <body>
+    <div class="contaniner">
+      <div class="row changeRow">
+        <div class="col-4 leftSide">
+           <div class="topDiv row">
+         
+           
+            <button class="searchBtn" type="submit">
+              Search for Places
+            </button>
+          
+          
           <div>
             <i class="fas fa-location fa-2x"></i>
           </div>
@@ -41,108 +54,122 @@
           <i class="fa fa-map-marker" aria-hidden="true"></i> Almora
         </div>
        
-      </div>
-      <div class="col-8">
-        <!-- <div class="temConveter">
+      </div> 
+          <div class="col-4 searchDiv hidden">
+            <i class="fas fa-times  fa-2x"></i>
+
+            <div class="marginTop">
+              <input class="searchCity" type="text">
+              <button class="searchData"type="submit">
+                Search
+              </button>
+
+            </div>
+            <ul>
+              <li>this</li>
+            </ul>
+          </div>
+          <div class="col-8">
+            <div class="temConveter">
           <button type="" id="celcius">&deg; c</button>
           <button type="" id="fahrenheit">&deg; F</button>
-        </div> -->
-        <div class="marginTop">
-          <div class="row fiveDays">
-            <!-- code : -->
-            <div class="col-2 col1">
-              <p class="day">today</p>
-              <div class="weatherIcon">
-                <img src="./img/Shower.png" alt="" srcset="" />
-              </div>
-              <div class="row minMaxtem">
-                <div class="maxTemp textCenter">33&deg;</div>
-                <div class="minTemp">45&deg;</div>
-              </div>
-            </div>
-            <!--code end -->
-            <div class="col-2 col1">
-              <p class="day">today</p>
-              <div class="weatherIcon">
-                <img src="./img/Shower.png" alt="" srcset="" />
-              </div>
-              <div class="row minMaxtem">
-                <div class="maxTemp textCenter">33&deg;</div>
-                <div class="minTemp">45&deg;</div>
-              </div>
-            </div>
-            <div class="col-2 col1">
-              <p class="day">today</p>
-              <div class="weatherIcon">
-                <img src="./img/Shower.png" alt="" srcset="" />
-              </div>
-              <div class="row minMaxtem">
-                <div class="maxTemp textCenter">33&deg;</div>
-                <div class="minTemp">45&deg;</div>
-              </div>
-            </div>
-            <div class="col-2 col1">
-              <p class="day">today</p>
-              <div class="weatherIcon">
-                <img src="./img/Shower.png" alt="" srcset="" />
-              </div>
-              <div class="row minMaxtem">
-                <div class="maxTemp textCenter">33&deg;</div>
-                <div class="minTemp">45&deg;</div>
-              </div>
-            </div>
-            <div class="col-2 col1">
-              <p class="day">today</p>
-              <div class="weatherIcon">
-                <img src="./img/Shower.png" alt="" srcset="" />
-              </div>
-              <div class="row minMaxtem">
-                <div class="maxTemp textCenter">33&deg;</div>
-                <div class="minTemp">45&deg;</div>
-              </div>
-            </div>
-          </div>
         </div>
+            <div class="marginTop">
+              <div class="row fiveDays">
+                <!-- code : -->
 
-        <h1 class="marginY f-Bold fs">Today’s Hightlights</h1>
-        <div class="row">
-          <div class="col-6">
-            <p>Wind Status</p>
-
-            <h2 class="windStaus">7Mph</h2>
-            <p>WSW</p>
-
-          </div>
-          <div class="col-6">
-            <p>Humidity</p>
-            <div class="m-auto marginTop1">
-              <h2 class="Humidity">84%</h2>
-              <label for="file"></label>
-              <progress id="windSpeed" value="76" max="100"> 76% </progress>
-
+                <div class="col-2 col1">
+                  <p class="day">today</p>
+                  <div class="weatherIcon">
+                    <img src="./img/Shower.png" alt="" srcset="" />
+                  </div>
+                  <div class="row minMaxtem">
+                    <div class="maxTemp textCenter">33&deg;</div>
+                    <div class="minTemp">45&deg;</div>
+                  </div>
+                </div>
+                <!--code end -->
+                <div class="col-2 col1">
+                  <p class="day">today</p>
+                  <div class="weatherIcon">
+                    <img src="./img/Shower.png" alt="" srcset="" />
+                  </div>
+                  <div class="row minMaxtem">
+                    <div class="maxTemp textCenter">33&deg;</div>
+                    <div class="minTemp">45&deg;</div>
+                  </div>
+                </div>
+                <div class="col-2 col1">
+                  <p class="day">today</p>
+                  <div class="weatherIcon">
+                    <img src="./img/Shower.png" alt="" srcset="" />
+                  </div>
+                  <div class="row minMaxtem">
+                    <div class="maxTemp textCenter">33&deg;</div>
+                    <div class="minTemp">45&deg;</div>
+                  </div>
+                </div>
+                <div class="col-2 col1">
+                  <p class="day">today</p>
+                  <div class="weatherIcon">
+                    <img src="./img/Shower.png" alt="" srcset="" />
+                  </div>
+                  <div class="row minMaxtem">
+                    <div class="maxTemp textCenter">33&deg;</div>
+                    <div class="minTemp">45&deg;</div>
+                  </div>
+                </div>
+                <div class="col-2 col1">
+                  <p class="day">today</p>
+                  <div class="weatherIcon">
+                    <img src="./img/Shower.png" alt="" srcset="" />
+                  </div>
+                  <div class="row minMaxtem">
+                    <div class="maxTemp textCenter">33&deg;</div>
+                    <div class="minTemp">45&deg;</div>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
 
-          <div class="col-6">
-            <p>Visibility</p>
+            <h1 class="marginY f-Bold fs">Today’s Hightlights</h1>
 
-            <h2 class="visibility">6,4 miles</h2>
-          </div>
-          <div class="col-6">
-            <p>Air Pressure</p>
-            <div class="m-auto marginTop1">
-              <h2 class="airPressure">998 mb</h2>
 
+
+            <div class="row">
+              <div class="col-6">
+                <p>Wind Status</p>
+
+                <h2 class="windStaus">7Mph</h2>
+                <p> <i class="fa fa-location-circle"></i>
+                  <i class="far fa-location-circle"></i>WSW</p>
+              </div>
+              <div class="col-6">
+                <p>Humidity</p>
+                <div class="m-auto marginTop1">
+                  <h2 class="Humidity">84%</h2>
+                  <label for="file"></label>
+                  <progress id="windSpeed" value="76" max="100">76%</progress>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <p>Visibility</p>
+
+                <h2 class="visibility">6,4 miles</h2>
+              </div>
+              <div class="col-6">
+                <p>Air Pressure</p>
+                <div class="m-auto marginTop1">
+                  <h2 class="airPressure">998 mb</h2>
+                </div>
+              </div>
             </div>
-
           </div>
         </div>
       </div>
     </div>
-  </div>
-  </div>
 
-  <script src="main.js"></script>
-</body>
-
+    <script src="main.js"></script>
+  </body>
 </html>
