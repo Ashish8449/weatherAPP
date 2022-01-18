@@ -144,6 +144,10 @@ img {
 
   margin: 0 auto;
 }
+li {
+  margin: 10px 0;
+  cursor: pointer;
+}
 
 /*================================================================================
                              col_8                                                   
@@ -175,6 +179,7 @@ img {
 .col-2 {
   position: relative;
   width: calc(20% - 40px);
+  margin-top: 20px;
   min-height: 150px;
   flex-wrap: wrap;
   text-align: center;
@@ -182,7 +187,7 @@ img {
   border-radius: 8px;
 }
 .marginTop {
-  margin-top: 52px;
+  margin-top: 35px;
 }
 .fiveDays {
   display: flex;

@@ -26,6 +26,15 @@ const currntDate = document.querySelector("p");
 const windStaus = document.querySelector(".windStaus");
 const visibility = document.querySelector(".visibility");
 const airPressure = document.querySelector(".airPressure");
+const lastSearchs = document.querySelector(".lastSearchs");
+const currentLocation = document.querySelector(".currentLocation");
+const lastSearchArr = localStorage.getItem("lastSearchArr")
+  ? JSON.parse(localStorage.getItem("lastSearchArr"))
+  : [];
+// Array.from(lastSearchArr);
+
+// console.log(typeof lastSearchArr);
+
 console.log(visibility);
 console.log(windStaus);
 
@@ -51,7 +60,8 @@ const months = [
 async function getData(cityName) {
   const cnt = 5;
   let response = await fetch(
-    `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&cnt=7&appid=ebd7b2e73b4cd4b0a7b5931e071e7688`
+    // `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&units=metric&cnt=16&appid=ebd7b2e73b4cd4b0a7b5931e071e7688`
+    `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=ebd7b2e73b4cd4b0a7b5931e071e7688`
   );
   if (response.ok) {
     return response.json();
@@ -79,11 +89,25 @@ function toggler(e) {
   leftSideDiv.classList.toggle("hidden");
   searchDiv.classList.toggle("hidden");
 }
-function searchDataFunc(e) {
-  const cityName = searchCity.value;
+function renderli(lastSearchArr) {
+  lastSearchArr = lastSearchArr.slice(0, 8);
+
+  const liEements = lastSearchArr.map((item) => {
+    return `<li>${item}</li>`;
+  });
+  lastSearchs.innerHTML = liEements.join("");
+  const allLi = lastSearchs.querySelectorAll("li");
+  allLi.forEach((item) => {
+    item.addEventListener("click", searchFromLi);
+  });
+}
+function searchDataFunc(city) {
+  const cityName = searchCity.value || city;
   getData(cityName)
     .then((data) => {
-      tem.innerHTML = Math.round(data.list[0].main.temp) + `<span>&degc</span>`;
+      console.log(data);
+      tem.innerHTML =
+        Math.round(data.list[0].main.temp - 273) + `<span>&degc</span>`;
       changeImg(weatherIcon, data.list[0].weather[0].main);
       weather.innerHTML = data.list[0].weather[0].main;
       Humidity.innerHTML = data.list[0].main.humidity + `%`;
@@ -92,13 +116,17 @@ function searchDataFunc(e) {
       windStaus.innerHTML = `${data.list[0].wind.speed} Mph`;
       visibility.innerHTML = `${data.list[0].visibility / 1000} miles`;
       airPressure.innerHTML = `${data.list[0].main.pressure}mb`;
-      console.log(data);
+      // console.log(data);
+      currentLocation.innerHTML = ` <i class="fa fa-map-marker" aria-hidden="true"></i> ${data.city.name}`;
       currntDate.innerHTML = `Today • <span class="todayDate"> ${
         new Date().getDate() + " " + months[new Date().getMonth()]
       } </span>`;
 
-      const arr = data.list;
-      arr.splice(5);
+      const arr = data.list.filter((value, i) => {
+        if (!(i % 8)) return 1;
+      });
+      console.log(arr);
+
       arr.forEach((item, i) => {
         changeValue(days[i], i, item);
       });
@@ -107,6 +135,14 @@ function searchDataFunc(e) {
       alert(err.message);
     });
   toggler();
+  searchCity.value = "";
+  let check = 0;
+  lastSearchArr.forEach((value, i) => {
+    if (value == cityName) check = 1;
+  });
+  if (!check) lastSearchArr.push(cityName);
+  renderli(lastSearchArr);
+  localStorage.setItem("lastSearchArr", JSON.stringify(lastSearchArr));
 }
 function pressEnter(e) {
   if (e.key == "Enter") {
@@ -114,7 +150,6 @@ function pressEnter(e) {
   }
 }
 function changeValue(element, index, array) {
-  console.log(element);
   const lefttem = element.querySelector(".maxTemp");
   const righttem = element.querySelector(".minTemp");
   const img = element.querySelector("img");
@@ -122,10 +157,15 @@ function changeValue(element, index, array) {
   const date = new Date();
   day.innerHTML = `${date.getDate() - index}  ${months[date.getMonth()]}`;
   changeImg(img, array.weather[0].main);
-  lefttem.innerHTML = ` ${Math.round(array.main.temp_min)}&deg`;
-  righttem.innerHTML = `${Math.round(array.main.temp_max)}&deg`;
+  lefttem.innerHTML = ` ${Math.round(array.main.temp_min) - 273}&deg`;
+  righttem.innerHTML = `${Math.round(array.main.temp_max) - 273}&deg`;
+}
+function searchFromLi(e) {
+  console.log(e.target.innerHTML);
+  searchDataFunc(e.target.innerHTML);
 }
 
+renderli(lastSearchArr);
 /*================================================================================
                              eventlistner                                                   
 ================================================================================*/
