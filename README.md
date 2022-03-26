@@ -3,7 +3,7 @@ A weather web app based on openweathermap API, that gives the weather of the day
 
 
 ## Live Link
-[CLick Here➡️](https://anjali-kukreti.github.io/Weather-App/)
+[CLick Here➡️](https://ashish8449.github.io/weatherAPP/)
 
 ## Features
 
